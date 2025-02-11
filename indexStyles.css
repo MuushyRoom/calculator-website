@@ -1,0 +1,83 @@
+body{
+    display: flex;
+    flex-direction:row;
+ justify-content: space-around;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #1F1B24;
+    color: #BB86FC;
+}   
+
+.divMainBox{
+ width: 30vw;
+ border: 5px solid#BB86FC;
+ padding: 10px;
+}
+
+.resultDiv,.functionDiv{
+ 
+   width: 100%;
+   display: inline-block;
+   
+}
+.resultDiv{
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   height: 30%;
+}
+.resultArea {
+  background-color: #1F1B24;
+  color: #BB86FC;
+   font-size: 80px;
+   text-align: right;
+    resize: none;
+  width: 95%;
+ 
+    overflow: hidden;
+   
+    margin-bottom: 10px;
+    
+}
+.functionDiv{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  
+}
+.title {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+}
+a{
+    text-align: center;
+    margin: 20px;
+    
+}
+
+button{
+   
+    color: #BB86FC;
+     
+    border-radius: 50%;
+    border: 1px solid #1F1B24;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 10px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.divHistory,.divSpacer{
+    display: flex;
+    flex-direction: row;
+   
+    height: 100vh;
+    width:40%;
+}
