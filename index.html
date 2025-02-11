@@ -15,15 +15,40 @@
         <h1 class="title">Calculator</h1>
         <div class="resultDiv">
        
-        <textarea class="resultArea" name="results" rows="1" id="displayArea">1+1+1</textarea>
+        <textarea readonly class="resultArea" name="results" rows="1" cols="9999" id="displayArea">1+1+1</textarea>
     </div>
 
     <div class="functionDiv">
         
-        <button type="button" class="button1">C</button><button type="button">-</button><button type="button">+</button><button type="button">%</button>
-        <button type="button" class="button1">7</button><button type="button">8</button><button type="button">9</button><button type="button">x</button>
-        <button type="button" class="button1">7</button><button type="button">8</button><button type="button">9</button><button type="button">x</button>
-        <button type="button" class="button1">7</button><button type="button">8</button><button type="button">9</button><button type="button">x</button>
+        <!-- FIRST TOP BUTTON-->
+        <button type="button" id="btnHistory" class="button">⏲</button>
+        <button type="button" id="btnPlusMinus" >⏲</button>
+        <button  type="button" id="btnDarkLightToggle">☾☼</button>
+        <button type="button" id="btnDel" >⌫</button>
+    <!-- FIRST TOP BUTTON-->
+        <button type="button" id="btnClear" onclick="setClear()" class="button">C</button>
+       
+        <button type="button" id="btnPlusMinus" >.</button>
+        <button id="btnPercent" type="button">%</button>
+        <button id="btnDivide" type="button">÷</button>
+
+          <!-- SECOND TO TOP BUTTON-->
+        <button type="button" id="btn7" class="button">7</button>
+        <button type="button" id="btn8" >8</button>
+        <button id="btn9" type="button">9</button>
+        <button id="btnMultiply" type="button">x</button>
+
+  <!-- THIRD TO TOP BUTTON-->
+  <button type="button" id="btn4" class="button">4</button>
+  <button type="button" id="btn5" >5</button>
+  <button id="btn6" type="button">6</button>
+  <button id="btnMinus" type="button">-</button>
+
+    <!-- LAST TO TOP BUTTON-->
+    <button type="button" id="btn1" class="button">1</button>
+    <button type="button" id="btn2" >2</button>
+    <button id="btn3" type="button">3</button>
+    <button id="btnAdd" type="button">+</button>
     </div>
     <a target="_blank" href="https://github.com/MuushyRoom"><p>Copyright © 2025 MuushyRoom </p></a></div>
     </div>
@@ -33,6 +58,129 @@
     <div class="divSpacer">
 
     </div>
+    <script>
+
+
+
+      //Button Clear
+      document.getElementById("btnHistory").addEventListener("click", function(setClear) {      
+  let resultArea =  document.getElementById("displayArea");
+  resultArea.textContent = " "; 
+
+                        });
+
+        //Button PlusmINUS
+  document.getElementById("btnPlusMinus").addEventListener("click", function() {   
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent = " ";    
+    document.getElementById("displayArea").scrollTop = document.getElementById("displayArea").scrollHeight 
+  
+});
+        //Button PERCENT
+        document.getElementById("btnPercent").addEventListener("click", function() {      
+            let resultArea =  document.getElementById("displayArea");
+            resultArea.textContent += "%";  
+            document.getElementById("displayArea").scrollTop = document.getElementById("displayArea").scrollHeight  
+});
+        //Button DIVIDE
+        document.getElementById("btnDivide").addEventListener("click", function() {      
+            let resultArea =  document.getElementById("displayArea");
+            resultArea.textContent += "÷";  
+});
+
+
+        //Button Clear
+  document.getElementById("btnClear").addEventListener("click", function(setClear) {      
+  let resultArea =  document.getElementById("displayArea");
+  resultArea.textContent = " "; 
+
+                        });
+
+        //Button PlusmINUS
+  document.getElementById("btnPlusMinus").addEventListener("click", function() {   
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent = " ";    
+    document.getElementById("displayArea").scrollTop = document.getElementById("displayArea").scrollHeight 
+  
+});
+        //Button PERCENT
+        document.getElementById("btnPercent").addEventListener("click", function() {      
+            let resultArea =  document.getElementById("displayArea");
+            resultArea.textContent += "%";  
+            document.getElementById("displayArea").scrollTop = document.getElementById("displayArea").scrollHeight  
+});
+        //Button DIVIDE
+        document.getElementById("btnDivide").addEventListener("click", function() {      
+            let resultArea =  document.getElementById("displayArea");
+            resultArea.textContent += "÷";  
+});
+
+       //Button minus
+       document.getElementById("btnMinus").addEventListener("click", function() {      
+            let resultArea =  document.getElementById("displayArea");
+            resultArea.textContent += "-";  
+});
+
+   //Button minus
+       document.getElementById("btnMultiply").addEventListener("click", function() {      
+            let resultArea =  document.getElementById("displayArea");
+            resultArea.textContent += "x";  
+});
+  //Button add
+  document.getElementById("btnAdd").addEventListener("click", function() {      
+            let resultArea =  document.getElementById("displayArea");
+            resultArea.textContent += "+";  
+});
+
+
+  //Button 1
+  document.getElementById("btn1").addEventListener("click", function() {      
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent += "1";  
+});
+
+ //Button 2
+ document.getElementById("btn2").addEventListener("click", function() {      
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent += "2";  
+});
+
+ //Button 3
+ document.getElementById("btn3").addEventListener("click", function() {      
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent += "3";  
+});
+ //Button 4
+ document.getElementById("btn4").addEventListener("click", function() {      
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent += "4";  
+});
+ //Button 5
+ document.getElementById("btn5").addEventListener("click", function() {      
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent += "5";  
+});
+ //Button 6
+ document.getElementById("btn6").addEventListener("click", function() {      
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent += "6";  
+});
+ //Button 7
+ document.getElementById("btn7").addEventListener("click", function() {      
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent += "7";  
+});
+ //Button 8
+ document.getElementById("btn8").addEventListener("click", function() {      
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent += "8";  
+});
+ //Button 9
+ document.getElementById("btn9").addEventListener("click", function() {      
+    let resultArea =  document.getElementById("displayArea");
+    resultArea.textContent += "9";  
+});
+    </script>
     
 </body>
 </html>
