@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
@@ -21,34 +22,51 @@
     <div class="functionDiv">
         
         <!-- FIRST TOP BUTTON-->
-        <button type="button" id="btnHistory" class="button">⏲</button>
-        <button type="button" id="btnPlusMinus" >⏲</button>
-        <button  type="button" id="btnDarkLightToggle">☾☼</button>
-        <button type="button" id="btnDel" >⌫</button>
-    <!-- FIRST TOP BUTTON-->
-        <button type="button" id="btnClear" onclick="setClear()" class="button">C</button>
+         <div class="layer1"> <button type="button" id="btnClear" onclick="setClear()" class="button">C</button>
+            <button type="button" id="btnHistory" class="button">⏲</button>
+            <button type="button" id="btnDel" >⌫</button>
+            <button id="btnPercent" type="button">%</button>  
+        </div>
+        
+        
+        
+     
+        <div class="layer2">
+   
+            <button type="button" id="btnPoint" >.</button>   
+            <button id="btnDivide" type="button">÷</button>
+            <button type="button" id="btn7" class="button">7</button>
+            <button type="button" id="btn8" >8</button>
+        </div>
+    
+
+        <div class="layer3">
+
+      <button id="btn9" type="button">9</button>
+      <button id="btnMultiply" type="button">x</button>
+      <button id="btnMinus" type="button">-</button>
+      <button type="button" id="btn4" class="button">4</button>
        
-        <button type="button" id="btnPlusMinus" >.</button>
-        <button id="btnPercent" type="button">%</button>
-        <button id="btnDivide" type="button">÷</button>
+    </div>
 
-          <!-- SECOND TO TOP BUTTON-->
-        <button type="button" id="btn7" class="button">7</button>
-        <button type="button" id="btn8" >8</button>
-        <button id="btn9" type="button">9</button>
-        <button id="btnMultiply" type="button">x</button>
+    <div class="layer4">
 
-  <!-- THIRD TO TOP BUTTON-->
-  <button type="button" id="btn4" class="button">4</button>
-  <button type="button" id="btn5" >5</button>
-  <button id="btn6" type="button">6</button>
-  <button id="btnMinus" type="button">-</button>
+        <button type="button" id="btn5" >5</button>
+        <button id="btn6" type="button">6</button>
+          <button type="button" id="btn1" class="button">1</button>
+          <button  type="button" id="btn0">0</button>
 
-    <!-- LAST TO TOP BUTTON-->
-    <button type="button" id="btn1" class="button">1</button>
+    </div>
+       
+  <div class="layer5">
+
+    <button id="btnPlusMinus" type="button">±</button>
     <button type="button" id="btn2" >2</button>
     <button id="btn3" type="button">3</button>
     <button id="btnAdd" type="button">+</button>
+
+  </div>
+   
     </div>
     <a target="_blank" href="https://github.com/MuushyRoom"><p>Copyright © 2025 MuushyRoom </p></a></div>
     </div>
@@ -60,125 +78,113 @@
     </div>
     <script>
 
+//Button Clear
+$('#btnClear').click(function() {
+    
+    document.getElementById('displayArea').value = " ";
+});
 
 
-      //Button Clear
-      document.getElementById("btnHistory").addEventListener("click", function(setClear) {      
-  let resultArea =  document.getElementById("displayArea");
-  resultArea.textContent = " "; 
+                          //Button plus minus
+ $('#btnPlusMinus').click(function() {
+    let minusText= "-";
+    let  resultArea = $("#displayArea").val();
+    document.getElementById('displayArea').value = minusText + resultArea;
+});
 
-                        });
 
-        //Button PlusmINUS
-  document.getElementById("btnPlusMinus").addEventListener("click", function() {   
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent = " ";    
-    document.getElementById("displayArea").scrollTop = document.getElementById("displayArea").scrollHeight 
-  
+        //Button Period
+        $('#btnHistory').click(function() {
+    
+    document.getElementById('displayArea').value = "H";
 });
         //Button PERCENT
-        document.getElementById("btnPercent").addEventListener("click", function() {      
-            let resultArea =  document.getElementById("displayArea");
-            resultArea.textContent += "%";  
-            document.getElementById("displayArea").scrollTop = document.getElementById("displayArea").scrollHeight  
+        $('#btnPercent').click(function() {
+    
+    document.getElementById('displayArea').value = "%";
 });
+
+/*
+        //Button DarkMode
+        $('#btnDarkLightToggle').click(function() {
+    
+    document.getElementById('displayArea').value = "dlt";
+});
+
+*/
         //Button DIVIDE
-        document.getElementById("btnDivide").addEventListener("click", function() {      
-            let resultArea =  document.getElementById("displayArea");
-            resultArea.textContent += "÷";  
-});
-
-
-        //Button Clear
-  document.getElementById("btnClear").addEventListener("click", function(setClear) {      
-  let resultArea =  document.getElementById("displayArea");
-  resultArea.textContent = " "; 
-
-                        });
-
-        //Button PlusmINUS
-  document.getElementById("btnPlusMinus").addEventListener("click", function() {   
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent = " ";    
-    document.getElementById("displayArea").scrollTop = document.getElementById("displayArea").scrollHeight 
-  
-});
-        //Button PERCENT
-        document.getElementById("btnPercent").addEventListener("click", function() {      
-            let resultArea =  document.getElementById("displayArea");
-            resultArea.textContent += "%";  
-            document.getElementById("displayArea").scrollTop = document.getElementById("displayArea").scrollHeight  
-});
-        //Button DIVIDE
-        document.getElementById("btnDivide").addEventListener("click", function() {      
-            let resultArea =  document.getElementById("displayArea");
-            resultArea.textContent += "÷";  
+        $('#btnDivide').click(function() {
+    
+    document.getElementById('displayArea').value += "÷";
 });
 
        //Button minus
-       document.getElementById("btnMinus").addEventListener("click", function() {      
-            let resultArea =  document.getElementById("displayArea");
-            resultArea.textContent += "-";  
+       $('#btnMinus').click(function() {
+    
+    document.getElementById('displayArea').value += "-";
 });
 
-   //Button minus
-       document.getElementById("btnMultiply").addEventListener("click", function() {      
-            let resultArea =  document.getElementById("displayArea");
-            resultArea.textContent += "x";  
-});
+
   //Button add
-  document.getElementById("btnAdd").addEventListener("click", function() {      
-            let resultArea =  document.getElementById("displayArea");
-            resultArea.textContent += "+";  
+  $('#btnAdd').click(function() {
+    
+    document.getElementById('displayArea').value += "+";
 });
 
-
+ //Button 0
+ $('#btn0').click(function() {
+    
+    document.getElementById('displayArea').value += "0";
+});
   //Button 1
-  document.getElementById("btn1").addEventListener("click", function() {      
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent += "1";  
+  $('#btn1').click(function() {
+    
+    document.getElementById('displayArea').value += "1";
 });
 
  //Button 2
- document.getElementById("btn2").addEventListener("click", function() {      
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent += "2";  
+ $('#btn2').click(function() {
+    
+    document.getElementById('displayArea').value += "2";
 });
 
+
  //Button 3
- document.getElementById("btn3").addEventListener("click", function() {      
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent += "3";  
+ $('#btn3').click(function() {
+    
+    document.getElementById('displayArea').value += "3";
 });
+
  //Button 4
- document.getElementById("btn4").addEventListener("click", function() {      
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent += "4";  
+ $('#btn4').click(function() {
+    
+    document.getElementById('displayArea').value += "4";
 });
+
  //Button 5
- document.getElementById("btn5").addEventListener("click", function() {      
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent += "5";  
+ $('#btn5').click(function() {
+    
+    document.getElementById('displayArea').value += "5";
 });
  //Button 6
- document.getElementById("btn6").addEventListener("click", function() {      
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent += "6";  
+ $('#btn6').click(function() {
+    
+    document.getElementById('displayArea').value += "6";
 });
  //Button 7
- document.getElementById("btn7").addEventListener("click", function() {      
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent += "7";  
+ $('#btn7').click(function() {
+    
+    document.getElementById('displayArea').value += "7";
 });
  //Button 8
- document.getElementById("btn8").addEventListener("click", function() {      
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent += "8";  
+ $('#btn8').click(function() {
+    
+    document.getElementById('displayArea').value += "8";
 });
  //Button 9
- document.getElementById("btn9").addEventListener("click", function() {      
-    let resultArea =  document.getElementById("displayArea");
-    resultArea.textContent += "9";  
+ $('#btn9').click(function() {
+    
+    document.getElementById('displayArea').value += "9";
 });
     </script>
     

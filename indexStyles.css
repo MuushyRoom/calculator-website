@@ -33,7 +33,7 @@ body{
 .resultArea {
   background-color: #1F1B24;
   color: #BB86FC;
-   font-size: 65px;
+   font-size: 23px;
    text-align: right;
     resize: none;
   width: 95%;
@@ -44,8 +44,8 @@ body{
     
 }
 .functionDiv{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+    display: flex;
+    flex-direction: column;
   
 }
 .title {
