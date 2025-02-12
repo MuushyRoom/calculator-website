@@ -16,54 +16,63 @@
         <h1 class="title">Calculator</h1>
         <div class="resultDiv">
        
-        <textarea readonly class="resultArea" name="results" rows="1" cols="9999" id="displayArea">1+1+1</textarea>
+        <textarea readonly class="resultArea" name="results" rows="1" id="displayArea">66</textarea>
     </div>
 
     <div class="functionDiv">
         
         <!-- FIRST TOP BUTTON-->
-         <div class="layer1"> <button type="button" id="btnClear" onclick="setClear()" class="button">C</button>
-            <button type="button" id="btnHistory" class="button">⏲</button>
-            <button type="button" id="btnDel" >⌫</button>
+       
+         <div class="layer1"> 
+            <button type="button" id="btnDel" >D</button>
+            
+          
+            
             <button id="btnPercent" type="button">%</button>  
+            <button type="button" id="btnClear" onclick="setClear()" class="button">C</button>
+            <button id="btnDivide" type="button">÷</button>
         </div>
         
         
         
      
         <div class="layer2">
-   
-            <button type="button" id="btnPoint" >.</button>   
-            <button id="btnDivide" type="button">÷</button>
+           
             <button type="button" id="btn7" class="button">7</button>
             <button type="button" id="btn8" >8</button>
+            <button id="btn9" type="button">9</button>
+            <button id="btnMultiply" type="button">x</button>
+           
         </div>
     
 
         <div class="layer3">
 
-      <button id="btn9" type="button">9</button>
-      <button id="btnMultiply" type="button">x</button>
-      <button id="btnMinus" type="button">-</button>
+     
       <button type="button" id="btn4" class="button">4</button>
-       
+      <button type="button" id="btn5" >5</button>
+      
+      <button id="btn6" type="button">6</button> <button id="btnMinus" type="button">-</button>
     </div>
 
     <div class="layer4">
-
-        <button type="button" id="btn5" >5</button>
-        <button id="btn6" type="button">6</button>
+       
+       
           <button type="button" id="btn1" class="button">1</button>
-          <button  type="button" id="btn0">0</button>
+          <button type="button" id="btn2" >2</button>
+          <button id="btn3" type="button">3</button> 
+          
+          <button id="btnAdd" type="button">+</button>
 
     </div>
        
   <div class="layer5">
 
     <button id="btnPlusMinus" type="button">±</button>
-    <button type="button" id="btn2" >2</button>
-    <button id="btn3" type="button">3</button>
-    <button id="btnAdd" type="button">+</button>
+    <button  type="button" id="btn0">0</button>
+    <button type="button" id="btnPoint" >.</button>  
+    <button type="button" id="btnEquals" >=</button>  
+    
 
   </div>
    
@@ -83,25 +92,41 @@ $('#btnClear').click(function() {
     
     document.getElementById('displayArea').value = " ";
 });
+//Button Del
+$('#btnDel').click(function() {
+    
+    document.getElementById('displayArea').value = " not yet working";
+});
 
 
                           //Button plus minus
  $('#btnPlusMinus').click(function() {
-    let minusText= "-";
-    let  resultArea = $("#displayArea").val();
-    document.getElementById('displayArea').value = minusText + resultArea;
+    showNewNum();
+    let x = document.getElementById('displayArea').value;
+    if(x <= -1){
+        let num1 = x * -1;
+        
+       document.getElementById('displayArea').value = num1;
+     }else if(x >0){
+      let num1 = x * -1;
+   
+       document.getElementById('displayArea').value = num1;
+     }else if(x == 0){
+       return 0;
+     }
+   
 });
 
 
         //Button Period
-        $('#btnHistory').click(function() {
-    
-    document.getElementById('displayArea').value = "H";
+        $('#btnPoint').click(function() {
+            showNewNum();
+    document.getElementById('displayArea').value += ".";
 });
         //Button PERCENT
         $('#btnPercent').click(function() {
-    
-    document.getElementById('displayArea').value = "%";
+            showNewNum();
+    document.getElementById('displayArea').value += "%";
 });
 
 /*
@@ -114,76 +139,82 @@ $('#btnClear').click(function() {
 */
         //Button DIVIDE
         $('#btnDivide').click(function() {
-    
+            showNewNum();
     document.getElementById('displayArea').value += "÷";
 });
 
        //Button minus
        $('#btnMinus').click(function() {
-    
+        showNewNum();
     document.getElementById('displayArea').value += "-";
 });
 
 
   //Button add
   $('#btnAdd').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "+";
+});
+
+ //Button multiply
+ $('#btnMultiply').click(function() {
+    showNewNum();
+    document.getElementById('displayArea').value += "x";
 });
 
  //Button 0
  $('#btn0').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "0";
 });
   //Button 1
   $('#btn1').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "1";
 });
 
  //Button 2
  $('#btn2').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "2";
 });
 
 
  //Button 3
  $('#btn3').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "3";
 });
 
  //Button 4
  $('#btn4').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "4";
 });
 
  //Button 5
  $('#btn5').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "5";
 });
  //Button 6
  $('#btn6').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "6";
 });
  //Button 7
  $('#btn7').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "7";
 });
  //Button 8
  $('#btn8').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "8";
 });
  //Button 9
  $('#btn9').click(function() {
-    
+    showNewNum();
     document.getElementById('displayArea').value += "9";
 });
     </script>

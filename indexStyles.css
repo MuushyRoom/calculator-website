@@ -33,13 +33,13 @@ body{
 .resultArea {
   background-color: #1F1B24;
   color: #BB86FC;
-   font-size: 23px;
+   font-size: 50px;
    text-align: right;
     resize: none;
-  width: 95%;
+  width: 100%;
  
-    overflow: hidden;
-   
+   overflow-x: hidden;
+    white-space: nowrap;
     
     
 }
@@ -47,6 +47,13 @@ body{
     display: flex;
     flex-direction: column;
   
+}
+.functionDiv div{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    justify-content: space-evenly;
+    margin: 5px 2px;
 }
 .title {
     text-align: center;
@@ -60,20 +67,20 @@ a{
 }
 
 button{
-   
+   flex: 1;
     color: #BB86FC;
-     background-color: #1F1B24;
+    background-color: #1F1B24;
     border-radius: 50%;
     border: 2px solid #BB86FC;
-    padding: 30px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 25px;
-    margin: 10px 10px;
-    cursor: pointer;
-    font-weight: bold;
+    font-size: 65px;
+    margin: 5px 5px;
+    padding: 5px;
+    height:15%;
+    width:15%;
 }
+
+
 .divHistory,.divSpacer{
     display: flex;
     flex-direction: row;

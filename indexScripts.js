@@ -4,3 +4,8 @@ function setClear(){
     num2 = 0;
 
 }
+function showNewNum(){
+    document.getElementById("displayArea").scrollLeft = document.getElementById("displayArea").scrollWidth
+ 
+}
+
