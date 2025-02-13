@@ -83,14 +83,31 @@
 
 
     <div class="divSpacer">
-
+       <textarea readonly disabled  name="" id="backEndNum">66</textarea>
     </div>
     <script>
 
+let num1,num2;
+let ope = "";
+function setClear(){
+    num1 = 0;
+    num2 = 0;
+
+}
+
+
+
+function showNewNum(){
+    document.getElementById("displayArea").scrollLeft = document.getElementById("displayArea").scrollWidth
+ 
+}
+
 //Button Clear
 $('#btnClear').click(function() {
-    
+    setClear();
+
     document.getElementById('displayArea').value = " ";
+    document.getElementById('backEndNum').value = " ";
 });
 //Button Del
 $('#btnDel').click(function() {
@@ -105,12 +122,13 @@ $('#btnDel').click(function() {
     let x = document.getElementById('displayArea').value;
     if(x <= -1){
         let num1 = x * -1;
-        
+        document.getElementById('backEndNum').value = num1;
        document.getElementById('displayArea').value = num1;
      }else if(x >0){
       let num1 = x * -1;
    
        document.getElementById('displayArea').value = num1;
+       document.getElementById('backEndNum').value = num1;
      }else if(x == 0){
        return 0;
      }
@@ -122,11 +140,38 @@ $('#btnDel').click(function() {
         $('#btnPoint').click(function() {
             showNewNum();
     document.getElementById('displayArea').value += ".";
+    document.getElementById('backEndNum').value += ".";
 });
-        //Button PERCENT
-        $('#btnPercent').click(function() {
+ 
+
+        //Button equals
+        $('#btnEquals').click(function() {
             showNewNum();
-    document.getElementById('displayArea').value += "%";
+           
+    document.getElementById('displayArea').value += "=";
+    let text = document.getElementById('backEndNum').value;
+    num2 = Number(text);
+    switch(ope) {
+  case "add":
+  num1 = Number(num1) + num2;
+    break;
+  case "minus":
+  num1 = Number(num1) - num2;
+    break;
+    case "multiply":
+    num1 = Number(num1) * num2;
+    break;
+    case "divide":
+    num1 = Number(num1) / num2;
+    break;
+   
+  default:
+    // code block
+}
+    console.log(num1);
+    document.getElementById('displayArea').value = num1;
+    document.getElementById('backEndNum').value = num1;
+
 });
 
 /*
@@ -141,12 +186,29 @@ $('#btnDel').click(function() {
         $('#btnDivide').click(function() {
             showNewNum();
     document.getElementById('displayArea').value += "÷";
+    document.getElementById('backEndNum').value = " ";
+    ope = "divide";
 });
 
        //Button minus
        $('#btnMinus').click(function() {
         showNewNum();
     document.getElementById('displayArea').value += "-";
+    document.getElementById('backEndNum').value = " ";
+    ope = "minus";
+});
+       //Button PERCENT
+       $('#btnPercent').click(function() {
+            showNewNum();
+    document.getElementById('displayArea').value += "%";
+
+  
+    let text = document.getElementById('backEndNum').value;
+    num1 = Number(text);
+num1 = num1 / 100;
+console.log(num1);
+    document.getElementById('displayArea').value = num1;
+    document.getElementById('backEndNum').value = num1;
 });
 
 
@@ -154,29 +216,38 @@ $('#btnDel').click(function() {
   $('#btnAdd').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "+";
+    num1 = document.getElementById('backEndNum').value;
+    console.log(num1)
+    document.getElementById('backEndNum').value = " ";
+    ope = "add";
 });
 
  //Button multiply
  $('#btnMultiply').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "x";
+    document.getElementById('backEndNum').value = " ";
+    ope = "multiply";
 });
 
  //Button 0
  $('#btn0').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "0";
+    document.getElementById('backEndNum').value += "0";
 });
   //Button 1
   $('#btn1').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "1";
+    document.getElementById('backEndNum').value += "1";
 });
 
  //Button 2
  $('#btn2').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "2";
+    document.getElementById('backEndNum').value += "2";
 });
 
 
@@ -184,38 +255,45 @@ $('#btnDel').click(function() {
  $('#btn3').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "3";
+    document.getElementById('backEndNum').value += "3";
 });
 
  //Button 4
  $('#btn4').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "4";
+    document.getElementById('backEndNum').value += "4";
 });
 
  //Button 5
  $('#btn5').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "5";
+    document.getElementById('backEndNum').value += "5";
 });
  //Button 6
  $('#btn6').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "6";
+    document.getElementById('backEndNum').value += "6";
 });
  //Button 7
  $('#btn7').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "7";
+    document.getElementById('backEndNum').value += "7";
 });
  //Button 8
  $('#btn8').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "8";
+    document.getElementById('backEndNum').value += "8";
 });
  //Button 9
  $('#btn9').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "9";
+    document.getElementById('backEndNum').value += "9";
 });
     </script>
     
