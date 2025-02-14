@@ -150,25 +150,38 @@ $('#btnDel').click(function() {
            
     document.getElementById('displayArea').value += "=";
     let text = document.getElementById('backEndNum').value;
+   
+    console.log("equalsFunction num1= "+num1);
+    console.log("equalsFunction num2= "+num2);
     num2 = Number(text);
     switch(ope) {
   case "add":
+  console.log("equalsFunction num1 switch case= "+num1);
+  console.log("equalsFunction num2 switch case= "+num2);
   num1 = Number(num1) + num2;
+  
     break;
   case "minus":
+  console.log("equalsFunction num1 switch case= "+num1);
+  console.log("equalsFunction num2 switch case= "+num2);
   num1 = Number(num1) - num2;
     break;
     case "multiply":
+    console.log("equalsFunction num1 switch case= "+num1);
+    console.log("equalsFunction num2 switch case= "+num2);
     num1 = Number(num1) * num2;
     break;
     case "divide":
+    console.log("equalsFunction num1 switch case= "+num1);
+    console.log("equalsFunction num2 switch case= "+num2);
     num1 = Number(num1) / num2;
     break;
    
   default:
     // code block
 }
-    console.log(num1);
+console.log("equalsFunction num1 setting new value= "+num1);
+console.log("equalsFunction num2 setting new value= "+num2);
     document.getElementById('displayArea').value = num1;
     document.getElementById('backEndNum').value = num1;
 
@@ -186,6 +199,10 @@ $('#btnDel').click(function() {
         $('#btnDivide').click(function() {
             showNewNum();
     document.getElementById('displayArea').value += "÷";
+    
+    num1 = document.getElementById('backEndNum').value;
+    console.log("divideFunction = "+num1);
+    console.log("divideFunction = "+num2);
     document.getElementById('backEndNum').value = " ";
     ope = "divide";
 });
@@ -194,7 +211,11 @@ $('#btnDel').click(function() {
        $('#btnMinus').click(function() {
         showNewNum();
     document.getElementById('displayArea').value += "-";
+    num1 = document.getElementById('backEndNum').value;
     document.getElementById('backEndNum').value = " ";
+    console.log("minusFunction = "+num1);
+    console.log("minusFunction = "+num2);
+    
     ope = "minus";
 });
        //Button PERCENT
@@ -217,7 +238,8 @@ console.log(num1);
     showNewNum();
     document.getElementById('displayArea').value += "+";
     num1 = document.getElementById('backEndNum').value;
-    console.log(num1)
+    console.log("addFunction num1= "+num1);
+    console.log("addFunction num2= "+num2);
     document.getElementById('backEndNum').value = " ";
     ope = "add";
 });
@@ -226,6 +248,9 @@ console.log(num1);
  $('#btnMultiply').click(function() {
     showNewNum();
     document.getElementById('displayArea').value += "x";
+    num1 = document.getElementById('backEndNum').value;
+    console.log("multiplyFunction = "+num1);
+    console.log("multiplyFunction = "+num2);
     document.getElementById('backEndNum').value = " ";
     ope = "multiply";
 });
