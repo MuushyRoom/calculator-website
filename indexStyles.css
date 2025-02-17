@@ -28,7 +28,7 @@ body{
    justify-content: center;
    align-items: center;
    flex-direction: column;
-   height: 20%;
+   height: 15%;
 }
 .resultArea {
   background-color: #1F1B24;
@@ -96,4 +96,17 @@ button{
 }
 a {
     text-decoration: none;
+}
+#backEndNum {
+    color: #1F1B24;
+    overflow: hidden;
+    resize: none;
+}
+.textInstructions {
+    text-align: center;
+   margin: 5px;
+    height: 20px;
+}
+*{
+    border: 1px solid red;
 }

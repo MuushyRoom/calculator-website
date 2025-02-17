@@ -14,6 +14,7 @@
    <!-- Main Box for displaying Calculator -->
     <div class="divMainBox">
         <h1 class="title">Calculator</h1>
+        <p class="textInstructions" id="textIns"></p>
         <div class="resultDiv">
        
         <textarea readonly class="resultArea" name="results" rows="1" id="displayArea">66</textarea>
@@ -88,6 +89,7 @@
     <script>
 
 let num1,num2;
+let isClicked = false
 let ope = "";
 function setClear(){
     num1 = 0;
@@ -111,8 +113,8 @@ $('#btnClear').click(function() {
 });
 //Button Del
 $('#btnDel').click(function() {
-    
-    document.getElementById('displayArea').value = " not yet working";
+    let getText = document.getElementById('displayArea').value;
+ 
 });
 
 
@@ -178,12 +180,17 @@ $('#btnDel').click(function() {
     break;
    
   default:
-    // code block
+  num1 = document.getElementById('backEndNum').value;
+  ope ="none";
+  break;
 }
 console.log("equalsFunction num1 setting new value= "+num1);
 console.log("equalsFunction num2 setting new value= "+num2);
     document.getElementById('displayArea').value = num1;
     document.getElementById('backEndNum').value = num1;
+    ope ="none";
+    isClicked = false;
+    $('#textIns').html('');
 
 });
 
@@ -197,26 +204,37 @@ console.log("equalsFunction num2 setting new value= "+num2);
 */
         //Button DIVIDE
         $('#btnDivide').click(function() {
-            showNewNum();
+   
+            if(isClicked == false){
+    showNewNum();
     document.getElementById('displayArea').value += "÷";
-    
     num1 = document.getElementById('backEndNum').value;
-    console.log("divideFunction = "+num1);
-    console.log("divideFunction = "+num2);
+    console.log("divideFunction num1= "+num1);
+    console.log("divideFunction num2= "+num2);
     document.getElementById('backEndNum').value = " ";
     ope = "divide";
+    isClicked = true;
+}else if(isClicked == true){
+    $('#textIns').html('press " = " first');
+}
 });
 
        //Button minus
        $('#btnMinus').click(function() {
-        showNewNum();
+
+        if(isClicked == false){
+    showNewNum();
     document.getElementById('displayArea').value += "-";
     num1 = document.getElementById('backEndNum').value;
+    console.log("minusFunction num1= "+num1);
+    console.log("minusFunction num2= "+num2);
     document.getElementById('backEndNum').value = " ";
-    console.log("minusFunction = "+num1);
-    console.log("minusFunction = "+num2);
-    
     ope = "minus";
+    isClicked = true;
+}else if(isClicked == true){
+    $('#textIns').html('press " = " first');
+}
+
 });
        //Button PERCENT
        $('#btnPercent').click(function() {
@@ -235,6 +253,7 @@ console.log(num1);
 
   //Button add
   $('#btnAdd').click(function() {
+if(isClicked == false){
     showNewNum();
     document.getElementById('displayArea').value += "+";
     num1 = document.getElementById('backEndNum').value;
@@ -242,17 +261,28 @@ console.log(num1);
     console.log("addFunction num2= "+num2);
     document.getElementById('backEndNum').value = " ";
     ope = "add";
+    isClicked = true;
+}else if(isClicked == true){
+    $('#textIns').html('press " = " first');
+}
+   
 });
 
  //Button multiply
  $('#btnMultiply').click(function() {
+    if(isClicked == false){
     showNewNum();
     document.getElementById('displayArea').value += "x";
     num1 = document.getElementById('backEndNum').value;
-    console.log("multiplyFunction = "+num1);
-    console.log("multiplyFunction = "+num2);
+    console.log("minusFunction num1= "+num1);
+    console.log("minusFunction num2= "+num2);
     document.getElementById('backEndNum').value = " ";
     ope = "multiply";
+    isClicked = true;
+}else if(isClicked == true){
+    $('#textIns').html('press " = " first');
+}
+
 });
 
  //Button 0
