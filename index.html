@@ -107,7 +107,8 @@ function showNewNum(){
 //Button Clear
 $('#btnClear').click(function() {
     setClear();
-
+    isClicked = false;
+    $('#textIns').html('');
     document.getElementById('displayArea').value = " ";
     document.getElementById('backEndNum').value = " ";
 });
